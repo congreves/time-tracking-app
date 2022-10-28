@@ -56,7 +56,7 @@ function Navbar() {
           </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink to="/time">
+          <NavLink to="/timer">
             <AiOutlineFieldTime />
           </NavLink>
         </NavItem>

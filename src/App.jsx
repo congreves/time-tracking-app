@@ -1,12 +1,15 @@
-import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/Routes/Root";
 import Overview from "./pages/Overview";
-import TimeTake from "./pages/TimeTake";
+
 import ErrorPage from "./pages/ErrorPage";
 import CalendarPage from "./pages/CalendarPage";
 import Projects from "./components/Projects";
 import Tasks from "./components/Tasks";
+import CreateCard from "./components/CreateCard";
+import CreateTask from "./components/CreateTask";
+import { AppProvider } from "./contexts/AppContext";
+import TimerPage from "./pages/TimerPage";
 
 const router = createBrowserRouter([
   {
@@ -22,10 +25,22 @@ const router = createBrowserRouter([
           {
             path: "/projects",
             element: <Projects />,
+            children: [
+              {
+                path: "/projects/createprojects",
+                element: <CreateCard />,
+              },
+            ],
           },
           {
             path: "/tasks",
             element: <Tasks />,
+            children: [
+              {
+                path: "/tasks/createtask",
+                element: <CreateTask />,
+              },
+            ],
           },
         ],
       },
@@ -34,8 +49,8 @@ const router = createBrowserRouter([
         element: <CalendarPage />,
       },
       {
-        path: "/time",
-        element: <TimeTake />,
+        path: "/timer",
+        element: <TimerPage />,
       },
     ],
   },
@@ -44,7 +59,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      <RouterProvider router={router} />
+      <AppProvider>
+        <RouterProvider router={router} />
+      </AppProvider>
     </div>
   );
 }

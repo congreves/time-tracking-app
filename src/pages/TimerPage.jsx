@@ -1,13 +1,15 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Timer from "../components/Timer";
 
-function TimeTake() {
+function TimerPage() {
   return (
     <div>
+      <h1>Timer</h1>
       <Navbar />
-      <h1>TimeTake</h1>
+      <Timer />
     </div>
   );
 }
 
-export default TimeTake;
+export default TimerPage;

@@ -1,6 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import { Outlet, Link } from "react-router-dom";
+import { GrFormAdd } from "react-icons/gr";
+import CreateTask from "./CreateTask";
+import { useProjects } from "../contexts/AppContext";
+import { AiFillDelete } from "react-icons/ai";
+
+
+const Container = styled.div`
+  height: 100vh;
+`;
 
 const TaskCard = styled.div`
   display: flex;
@@ -23,28 +33,44 @@ const TaskTime = styled.h3`
 const TasktTitle = styled.h3`
   color: #f4eff5;
 `;
+const Button = styled.button`
+  background-color: #414344;
+`;
 function Tasks() {
-  const [tasks, setTasks] = useState([]);
+  const { tasks, deleteTask, getTask } = useProjects();
+  const [active, setActive] = useState(false);
 
-  useEffect(() => {
-    fetch("http://localhost:3000/tasks")
-      .then((data) => data.json())
-      .then((data) => setTasks(data));
-  }, []);
+  const handleDeleteTask = async (id) => {
+    await deleteTask(id);
+    getTask();
+    return console.log(id);
+  };
 
   return (
-    <div>
+    <Container>
       {tasks.map((task) => {
         return (
           <TaskCard key={task.projectId}>
-            <TaskColor key={task.projectId} />
+            <TaskColor />
             <TasktTitle>{task.title}</TasktTitle>
-            <TaskTime>04:01:00</TaskTime>
+            <TaskTime></TaskTime>
+            <AiFillDelete onClick={() => handleDeleteTask(task.id)} />
             <BsThreeDotsVertical />
           </TaskCard>
         );
       })}
-    </div>
+      <Link
+        to={`/tasks/createtask`}
+        element={
+          <CreateTask active={active}  />
+        }
+      >
+        <Button onClick={() => setActive(true)}>
+          Add Task <GrFormAdd />{" "}
+        </Button>
+      </Link>
+      <Outlet />
+    </Container>
   );
 }
 
