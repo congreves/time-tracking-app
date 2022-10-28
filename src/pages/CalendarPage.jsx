@@ -6,7 +6,7 @@ import { useProjects } from "../contexts/AppContext";
 
 function CalendarPage() {
   const [date, setDate] = useState(new Date());
-  const { tasks, timelog } = useProjects();
+  const { timelog } = useProjects();
 
   const transformDate = (date) => {
     const year = date.getFullYear();

@@ -47,7 +47,6 @@ const Timer = () => {
     return console.log(id);
   };
 
-
   useEffect(() => {
     let interval = null;
     if (isActive) {
