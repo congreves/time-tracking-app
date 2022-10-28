@@ -1,69 +1,52 @@
-### Skapa ett projekt
+# Time tracking-app
 
-### Skapa en task knuten till ett projekt
+## What your application does,
 
-### Starta en tidtagning för en task
+####- Create a project
+####- Create a task linked to a project
+####- Start a timer for a task
+####- Stop a timer
+####- See a list of timings for a specific date
+####- See a list of projects
+####- See a list on tasks
+####- Delete a timer
+####- Remove a task
+####- Delete a project
 
-### Stoppa en tidtagning
+Why you used the technologies you used,
+Some of the challenges you faced and features you hope to implement in the future.
 
-### Se en lista på tidtagningar för ett specifikt datum
+## Choosen styling - Styled Components
 
-### Se en lista på projekt
+I choose to use style components as prefered way of styling since i find it similar to the component based mindset that react has.
+Though I would consider to explore tailwind further since I think it can be more effective if I would define variants that could be reusable.
 
-### Se en lista på tasks
+### The technologies I used
 
-### Ta bort en tidtagning
+#### axios -
 
-### Ta bort en task
+To create api request to server to fetch/post/patch/delete data.
 
-### Ta bort ett projekt
+#### concurrently
 
-### 1. Byggd med React som Frontend och json-server som "backend".
+To be able to run both backend & frontend simultaneously.
 
-- check
+#### json-server
 
-### 2. Använda React Router som router i applikationen.
+To store data
 
-- check
+#### match-sorter
 
-### 3. Applikationen ska använda React Context som "Store" för applikations-bred data.
+To match & sort data from arrays more efficent and accurately
 
-### 4. Samtliga krav under "En användare ska kunna" är uppfyllda.
+#### react-calendar
 
-### 5. Samtliga sidor under "Sidor som ska finnas" finns.
+To get a functional calendar from react library
 
-### 6. Den ska vara byggd för en mobil-webbläsare i första hand (och behöver inte innehålla styling för desktop).
+#### react icons
 
-- check
+To get menu icons and other informational elements for the app.
 
-### 7. Innehålla en README.md där du redogjort för ditt (1) valda sätt att styla applikationen, samt samtliga npm-paket du valt att använda och varför. (Du kan exkludera React och React Router)
+#### StyledComponents
 
-### 8. Den ska innehålla en "huvudnavigationsmeny" fixerad på botten på skärmen, som ska användas för att gå mellan de olika sidorna i applikationen (Tidtagning, kalender, överblick t.ex.). Om innehållet på sidan scrollar, ska den fortfarande vara fixerad på botten av applikationen. Den ska även visa vilken sida som är aktiv just nu på något vis.
-
-- Vilken sida som är aktiv
-
-### 9. När man lägger till ett "projekt" eller en "task" ska detta göras på antingen en separat sida eller i till exempel en modal.
-
-### 10. "Överblick"-sidan ska innehålla två "tabbar", en för projekt och en för tasks som man ska kunna växla mellan på sidan.
-
-### 11. Tiden som visas på tidtagnings-sidan ska "ticka upp" när den är aktiv.
-
-(Alltså för varje sekund som går, ska den visa det på skärmen)
-
-# 1. Inte visa calender ifall time logs inte finns
-
-# 2. Välja ett datum = 1 state , två datum = 2 states
-
-# 3. När jag skapar en time log så ska jag få ett startdatum med tid.
-
-# 4. Jämför inputstate från punkt 2 , med startdatumet i min time log.
-
-# 5. Om detta är sant så renderar ut task
-
-# 6. Skapa delete funktion för timelog
-
-# 7. Calendar ska va klar
-
-# 8. Fixa Modal av add task + project
-
-# 9. Readmefil
+To style appplication.
